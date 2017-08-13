@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>书格天气</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="home">
+  <ion-grid *ngIf="weather">
+    <ion-row>
+      <ion-col width-50 offset-25>
+          <h2 class="location">{{weather.basic.city}}</h2>
+          <div class="icon"><img src="" alt=""></div>
+          <h3 class="desc">{{weather.now.cond.txt}}</h3>
+          <h1 class="temp">{{weather.now.tmp}}&deg;</h1>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col width-100>
+        <ion-list>
+          <ion-item>
+            <strong>体感温度: </strong> {{weather.now.fl}}&deg;
+          </ion-item>
+          <ion-item>
+              <strong>相对湿度: </strong> {{weather.now.hum}}%
+          </ion-item>       
+          <ion-item>
+              <strong>能见度: </strong> {{weather.now.vis}}km
+          </ion-item>                                    
+        </ion-list>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>
